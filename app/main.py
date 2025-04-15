@@ -33,10 +33,6 @@ class Number(Validator):
                 f"Quantity should not be less than {self.min_value} "
                 f"and greater than {self.max_value}.")
 
-    def __set__(self, instance: object, value: Any) -> None:
-        self.validate(value)
-        setattr(instance, self.protected_name, value)
-
 
 class OneOf(Validator):
     def __init__(self, options: Sequence) -> None:
